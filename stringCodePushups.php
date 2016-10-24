@@ -145,6 +145,15 @@
         if ($pos2 !== false) {
             echo "We found '$findme' in '$mystring2' at position $pos2";
         }
-  }
+    }
+    
+    function stringToLower(){
+        $str = "Mary Had A Little Lamb and She LOVED It So";
+        $str = strtolower($str);
+        echo $str; //prints mary had a little lamb and she loved it so
+    }
+        
+  
+  
         
 ?>
