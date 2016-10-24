@@ -34,5 +34,12 @@
             echo "... and after:\n";
 
             array_walk($fruits, 'test_print');
-   }  
+   } 
+   
+   function arrayPop(){
+        $stack = array("orange", "banana", "apple", "raspberry");
+        $fruit = array_pop($stack);
+        
+        print_r($stack);
+   }
 ?>
