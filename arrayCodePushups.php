@@ -113,4 +113,10 @@
        $array = array(1, "hello", 1, "world", "hello");
        print_r(array_count_values($array));
    }
+   
+   function arrayFillKeys(){
+       $keys = array('foo', 5, 10, 'bar');
+       $a = array_fill_keys($keys, 'banana');
+       print_r($a);
+   }
 ?>
