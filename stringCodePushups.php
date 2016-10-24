@@ -116,4 +116,14 @@
         $str = str_replace("ll", "", "good golly miss molly!", $count);
         echo $count;
     }
+    
+    function strSplit(){
+        $str = "Hello Friend";
+        
+        $arr1 = str_split($str);
+        $arr2 = str_split($str, 3);
+        
+        print_r($arr1);
+        print_r($arr2);
+    }
 ?>
