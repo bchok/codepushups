@@ -19,4 +19,9 @@
         echo $pieces[0];
         echo $pieces[1];
     }
+    
+    function stringHTMLEntities(){
+        $str = "A 'quote' is <b>bold</b>";
+        echo htmlentities($str);
+    }
 ?>
