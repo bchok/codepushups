@@ -48,4 +48,12 @@
        array_push($stack, "apple", "raspberry");
        
        print_r($stack);
+   
+   function arrayCombine(){
+       $a = array('green', 'red', 'yellow');
+       $b = array('avacado', 'apple', 'banana');
+       $c = array_combine($a, $b);
+       
+       print_r($c);
+   }
 ?>
