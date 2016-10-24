@@ -29,4 +29,11 @@
         $new = htmlspecialchars("<a href='test'> TEST</a>", ENT_QUOTES);
         echo $new;
     }
+    
+    function stringImplode(){
+        $array = array('lastname', 'email', 'phone');
+        $comma_separated = implode(",", $array);
+        
+        echo $comma_separated;//lastname, email, phone
+    }
 ?>
