@@ -36,4 +36,13 @@
         
         echo $comma_separated;//lastname, email, phone
     }
+    
+    function stringLcFirst(){
+        $foo = 'Helloworld';
+        $foo = lcfirst($foo); //helloWorld
+        
+        $bar = 'HELLO WORLD!';
+        $bar = lcfirst($bar); //hELLO WORLD!
+        $bar = lcfirst(strtoupper($bar)); // hELLO WORLD!
+    }
 ?>
