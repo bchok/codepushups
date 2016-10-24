@@ -24,4 +24,9 @@
         $str = "A 'quote' is <b>bold</b>";
         echo htmlentities($str);
     }
+    
+    function htmlSpecialChars(){
+        $new = htmlspecialchars("<a href='test'> TEST</a>", ENT_QUOTES);
+        echo $new;
+    }
 ?>
