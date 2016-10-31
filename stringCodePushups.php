@@ -2,9 +2,11 @@
 
     function chunkSplit(){
         //format $data using RFC 2045 semantics
+        $data = "hello";
         $new_string = chunk_split(base64_encode($data));
+        echo $new_string;
     }
-    
+
     function countChars(){
         $data = "Two Ts and one F.";
         
@@ -25,7 +27,7 @@
         echo htmlentities($str);
     }
     
-    function htmlSpecialChars(){
+    function htmlSpecialCharsEx(){
         $new = htmlspecialchars("<a href='test'> TEST</a>", ENT_QUOTES);
         echo $new;
     }
@@ -174,8 +176,127 @@
         var_dump($clean);
         
     }
+    function addSlashesEx(){
+        $str = "Is your name O'Reilly?";
+
+        // Outputs: Is your name O\'Reilly?
+        echo addslashes($str);
+    }
+
+    function chrEx(){
+        $str = "The string ends in escape: ";
+        $str .= chr(27); /* add an escape character at the end of $str */
+
+        /* Often this is more useful */
+
+        $str = sprintf("The string ends in escape: %c", 27);
+        echo $str;
+    }
+    function echoEx(){
+        $foo = "foobar";
+        $bar = "barbaz";
+
+        echo "foo is $foo";//foo is foobar
+    }
+    function htmlSpecCharsDecode(){
+        $str = "<p>this -&gt; &quot;</p>\n";
+
+        echo htmlspecialchars_decode($str);
+
+        // note that here the quotes aren't converted
+        echo htmlspecialchars_decode($str, ENT_NOQUOTES);
+    }
+    function stripTags(){
+        $text = '<p>Test paragraph.</p><!-- Comment --> <a href="#fragment">Other text</a>';
+        echo strip_tags($text);
+        echo "\n";
+
+        // Allow <p> and <a>
+        echo strip_tags($text, '<p><a>');
+    }
+    function strPosEx(){
+        $mystring = 'abc';
+        $findme   = 'a';
+        $pos = strpos($mystring, $findme);
+
+        // Note our use of ===.  Simply == would not work as expected
+        // because the position of 'a' was the 0th (first) character.
+        if ($pos === false) {
+            echo "The string '$findme' was not found in the string '$mystring'";
+        } else {
+            echo "The string '$findme' was found in the string '$mystring'";
+            echo " and exists at position $pos";
+        }
+    }
+    function strLenEx(){
+        $str = 'abcdef';
+        echo strlen($str); // 6
+
+        $str = ' ab cd ';
+        echo strlen($str); // 7
+    }
+echo 'this is addslashes<br>';
+echo addSlashesEx();
+echo '<br><br>';
+
+echo 'this is chr<br>';
+echo chrEx();
+echo '<br><br>';
         
-  
+echo 'this is chunk split<br>';
+echo chunkSplit();
+echo '<br><br>';
+        
+echo 'this is count_cars<br>';
+echo countChars();
+echo '<br><br>';
+
+echo 'this is echo<br>';
+echo echoEx();
+echo '<br><br>';
+
+echo 'this is explode<br>';
+echo stringExplode();
+echo '<br><br>';
+
+echo 'this is htmlentities<br>';
+echo stringHTMLEntities();
+echo '<br><br>';
+
+echo 'this is htmlspeciachars_decode<br>';
+echo htmlSpecCharsDecode();
+echo '<br><br>';
+
+echo 'this is implode<br>';
+echo stringImplode();
+echo '<br><br>';
+
+echo 'this is md5<br>';
+echo stringMD5();
+echo '<br><br>';
+
+echo 'this is rtrim<br>';
+echo stringRTrim();
+echo '<br><br>';
+
+echo 'this is str_getcsv<br>';
+echo 'there was no example for str_getcsv on php manual';
+echo '<br><br>';
+
+echo 'this is strip_tags<br>';
+echo stripTags();
+echo '<br><br>';
+
+echo 'this is strpos<br>';
+echo strPosEx();
+echo '<br><br>';
+
+echo 'this is strlen<br>';
+echo strLenEx();
+
+
+
+
   
         
 ?>
