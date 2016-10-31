@@ -14,6 +14,7 @@
         $array = array(0=> 'blue', 1 => 'red', 2 => 'green', 3 => 'red');
         $key = array_search('green', $array);
         $key = array_search('red', $array);
+	echo $key;
     }
     
     function arrayWalk(){
@@ -48,6 +49,7 @@
        array_push($stack, "apple", "raspberry");
        
        print_r($stack);
+   }
    
    function arrayCombine(){
        $a = array('green', 'red', 'yellow');
@@ -57,7 +59,7 @@
        print_r($c);
    }
    
-   function fgetCSVTEST(){
+   function fgetCSVTEST($file){
        $row = 1;
        if (($handle = fopen("test.csv", "r")) !== FALSE) {
             while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
@@ -126,4 +128,71 @@
        echo $input[$rand_keys[0]] . "\n";
        echo $input[$rand_keys[1]] . "\n";
    }
+
+echo 'this is array_keys<br>';
+echo arrayKeys();
+echo '<br><br>';
+
+echo 'this is array_search<br>';
+echo arraySearch();
+echo '<br><br>';
+
+echo 'this is array_walk<br>';
+echo arrayWalk();
+echo '<br><br>';
+
+echo 'this is array_pop<br>';
+echo arrayPop();
+echo '<br><br>';
+
+echo 'this is array_push<br>';
+arrayChunk();
+echo '<br><br>';
+
+echo 'this is array_combine<br>';
+echo arrayCombine();
+echo '<br><br>';
+
+echo 'this is array_keys<br>';
+echo arrayKeys();
+echo '<br><br>';
+
+echo 'this is fgetcsv<br>';
+echo fgetCSVTEST("test.csv");
+echo '<br><br>';
+
+echo 'this is implode<br>';
+echo arrayImplode();
+echo '<br><br>';
+
+echo 'this is explode<br>';
+echo arrayExplode();
+echo '<br><br>';
+
+echo 'this is array_intersect<br>';
+echo arrayIntersect();
+echo '<br><br>';
+
+echo 'this is array_diff<br>';
+echo arrayDiff();
+echo '<br><br>';
+
+echo 'this is array_chunk<br>';
+echo arrayPush();
+echo '<br><br>';
+
+echo 'this is array_count_values<br>';
+echo arrayCountValues();
+echo '<br><br>';
+
+echo 'this is array_fill_keys<br>';
+echo arrayFillKeys();
+echo '<br><br>';
+
+echo 'this is array_rand<br>';
+echo arrayRand();
+echo '<br><br>';
+
+
+   
 ?>
